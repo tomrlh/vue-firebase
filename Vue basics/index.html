@@ -62,6 +62,15 @@
         </ul>
       </div>
 
+      <hr />
+
+      <h3>Favorites Only</h3>
+      <ul>
+        <li v-for="book in filteredBooks">
+          <h3>{{ book.title }}</h3>
+        </li>
+      </ul>
+
       <button v-on:click="age++">Increase age</button>
       <button v-on:click="age--">Decrease age</button>
       <br />

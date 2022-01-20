@@ -3,11 +3,18 @@
 
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
+
+  <Modal />
 </template>
 
 <script>
+import Modal from "./components/Modal";
+
 export default {
   name: "App",
+  components: {
+    Modal,
+  },
   data() {
     return {
       title: "My First Vue App :)",
@@ -31,5 +38,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+h1 {
+  border-bottom: 1px solid #ddd;
+  display: inline-block;
+  padding-bottom: 10px;
 }
 </style>

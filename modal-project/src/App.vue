@@ -7,9 +7,18 @@
       :text="text"
       theme="sale-not-matching"
       @close="toggleModal"
-    />
+    >
+      <template v-slot:links>
+        <a href="#">sign up now</a>
+        <br />
+        <a href="#">more info</a>
+      </template>
+
+      <h1>{{ header }}</h1>
+      <p>{{ text }}</p>
+    </Modal>
   </div>
-  <button @click.right="toggleModal">open modal (right click)</button>
+  <button @click.alt="toggleModal">open modal (alt)</button>
 </template>
 
 <script>

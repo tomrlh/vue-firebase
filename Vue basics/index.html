@@ -19,9 +19,14 @@
   </head>
   <body>
     <div id="app">
+      <!-- attribute binding -->
+      <a v-bind:href="url">Net Ninja</a>
+      <a :href="url">Net Ninja Shortcut</a>
+
       <div v-if="showBooks">
         <ul>
           <li v-for="book in books">
+            <img :src="book.img" :alt="book.title" />
             <h3>{{ book.title }}</h3>
             <p>{{ book.author }} - {{ book.age }}</p>
           </li>

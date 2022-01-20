@@ -48,13 +48,8 @@ const app = Vue.createApp({
       this.x = e.offsetX;
       this.y = e.offsetY;
     },
-    toggleIsFav(bookId) {
-      console.log(bookId);
-      this.books.forEach((book) => {
-        if (book.id === bookId) {
-          book.isFav = !book.isFav;
-        }
-      });
+    toggleIsFav(book) {
+      book.isFav = !book.isFav;
     },
   },
 });

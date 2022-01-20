@@ -53,7 +53,7 @@
           <li
             v-for="book in books"
             :class="{fav: book.isFav }"
-            @click="toggleIsFav(book.id)"
+            @click="toggleIsFav(book)"
           >
             <img :src="book.img" :alt="book.title" />
             <h3>{{ book.title }}</h3>

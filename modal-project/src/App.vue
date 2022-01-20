@@ -2,38 +2,24 @@
   <h1>{{ title }}</h1>
   <p>Welcome...</p>
   <div v-if="showModal">
-    <Modal
-      :header="header"
-      :text="text"
-      theme="sale-not-matching"
-      @close="toggleModal"
-    >
+    <Modal theme="sale-not-matching" @close="toggleModal">
       <template v-slot:links>
         <a href="#">sign up now</a>
         <br />
         <a href="#">more info</a>
       </template>
-
-      <h1>{{ header }}</h1>
-      <p>{{ text }}</p>
+      <h1>{{ title }}</h1>
+      <p>{{ header }}</p>
     </Modal>
   </div>
 
-  <div v-if="showModalTwo">
-    <Modal
-      :header="header"
-      :text="text"
-      theme="sale-not-matching"
-      @close="toggleModalTwo"
-    >
+  <teleport to=".modals" v-if="showModalTwo">
+    <Modal theme="sale-not-matching" @close="toggleModalTwo">
       <template v-slot:links>
         <p>content of second modal</p>
       </template>
-
-      <h1>{{ header }}</h1>
-      <p>{{ text }}</p>
     </Modal>
-  </div>
+  </teleport>
 
   <button @click.alt="toggleModal">open modal (alt)</button>
   <br />
@@ -75,7 +61,8 @@ export default {
 </script>
 
 <style>
-#app {
+#app,
+.modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

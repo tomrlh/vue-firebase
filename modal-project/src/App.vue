@@ -4,7 +4,7 @@
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
 
-  <Modal />
+  <Modal :header="header" :text="text" theme="sale-not-matching" />
 </template>
 
 <script>
@@ -17,7 +17,8 @@ export default {
   },
   data() {
     return {
-      title: "My First Vue App :)",
+      header: "My First Vue App :)",
+      text: "Text description here",
     };
   },
   methods: {

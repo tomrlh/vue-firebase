@@ -1,0 +1,2 @@
+Laravel + Vue 2
+https://www.youtube.com/watch?v=NtM9B12lARw

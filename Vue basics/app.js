@@ -5,6 +5,7 @@ const app = Vue.createApp({
       showBooks: true,
       books: [
         {
+          id: 1,
           title: "Book 1",
           author: "Brandon Sanderson",
           age: 45,
@@ -12,6 +13,7 @@ const app = Vue.createApp({
           isFav: false,
         },
         {
+          id: 2,
           title: "Book 2",
           author: "Brandon Sanderson",
           age: 45,
@@ -19,6 +21,7 @@ const app = Vue.createApp({
           isFav: false,
         },
         {
+          id: 3,
           title: "Book 3",
           author: "Brandon Sanderson",
           age: 45,
@@ -45,7 +48,19 @@ const app = Vue.createApp({
       this.x = e.offsetX;
       this.y = e.offsetY;
     },
+    toggleIsFav(bookId) {
+      console.log(bookId);
+      this.books.forEach((book) => {
+        if (book.id === bookId) {
+          book.isFav = !book.isFav;
+        }
+      });
+    },
   },
 });
 
 app.mount("#app");
+
+// Lesson 15: Challenge - Add to Favs
+// - attach a click event to each li tag (for each book)
+// - when a user clicks an li, toggle the 'isFav' property of that book

@@ -3,6 +3,8 @@
     <div class="modal" :class="{ sale: theme === 'sale' }">
       <slot>default content if no default slot is passed in</slot>
 
+      <slot name="secondary"></slot>
+
       <div class="actions">
         <slot name="links"></slot>
       </div>
